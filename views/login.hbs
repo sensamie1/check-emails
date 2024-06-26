@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #fff;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .login-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .login-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 0;
+      margin: 10px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .google-btn {
+      background-color: #d75d45;
+      color: white;
+    }
+
+    .google-btn:hover {
+      background-color: #d75d45;
+      transform: scale(1.05);
+    }
+
+    .outlook-btn {
+      background-color: #0897f0;
+      color: white;
+    }
+
+    .outlook-btn:hover {
+      background-color: #0897f0;
+      transform: scale(1.05);
+    }
+
+    .login-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      .login-btn {
+        font-size: 14px;
+      }
+
+      .login-btn img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <img src="https://res.cloudinary.com/ddi6arl8i/image/upload/v1719359415/Logos/check-emails_logo_firvpw.png" alt="Logo" class="logo">
+      <h1>Login</h1>
+      <button class="login-btn google-btn" onclick="window.location.href='/auth/google'">
+        <img src="https://res.cloudinary.com/ddi6arl8i/image/upload/v1719360101/Logos/google-logo_exfgov.png" alt="Google Logo">
+        <B>Login with Google</B>
+      </button>
+      <button class="login-btn outlook-btn" onclick="window.location.href='/auth/outlook'">
+        <img src="https://res.cloudinary.com/ddi6arl8i/image/upload/v1719360135/Logos/outlook-logo_v0wfxo.png" alt="Outlook Logo">
+        <B>Login with Outlook</B>
+      </button>
+    </div>
+  </div>
+</body>
+</html>

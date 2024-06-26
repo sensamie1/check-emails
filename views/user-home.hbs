@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+    }
+
+    .header {
+      background-color: #0897f0;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0 auto;
+    }
+
+    .logout-btn {
+      background-color: #d75d45;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #c64a3d;
+    }
+
+    .main {
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .job-list {
+      margin: 0;
+      padding: 0;
+    }
+
+    .job-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .job-list li {
+      background-color: #e0e0e0;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header h1 {
+        margin-bottom: 10px;
+      }
+
+      .main {
+        width: 90%;
+        padding: 10px;
+        box-shadow: none;
+      }
+
+      .logout-btn {
+        padding: 8px;
+      }
+
+      .job-list li {
+        margin: 5px 0;
+        padding: 8px;
+      }
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.reload();
+    }, 300000); // Refresh every 5 minutes
+  </script>
+</head>
+<body>
+  <header class="header">
+    <h1>Email Processing Dashboard</h1>
+    <form action="/logout" method="GET">
+      <button class="logout-btn" type="submit">Logout</button>
+    </form>
+  </header>
+  <main class="main">
+    <div class="job-list">
+      <h2>Processing Emails...</h2>
+      <ul id="job-list">
+        {{#each jobs}}
+          <li>Job ID: {{this.id}}, Status: {{this.state}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </main>
+</body>
+</html>

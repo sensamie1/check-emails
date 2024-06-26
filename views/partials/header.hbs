@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #a0a4a8;
+      background: linear-gradient(to bottom, #889bba 0%, #a8a0a7 100%);
+    }
+
+    .header {
+      width: 100%;
+      background-color: #0897f0;
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+    }
+
+    .header a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #fff;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .header a:hover {
+      background-color: #4a68ad;
+    }
+
+    .header .logo {
+      width: 100px;
+      height: auto;
+      vertical-align: middle;
+    }
+
+    .content {
+      padding-top: 70px; /* Adjust based on the header height */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="/home"><img src="logo.png" alt="Logo" class="logo"></a>
+    {{#if user}}
+      <a href="/logout"><i class="fa fa-sign-out" style="padding-right: 5px;"></i>Logout</a>
+    {{else}}
+      <a href="/login"><i class="fa fa-sign-in" style="padding-right: 5px;"></i>Login</a>
+    {{/if}}
+  </div>
+</body>
+</html>
